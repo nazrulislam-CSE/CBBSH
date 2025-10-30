@@ -1,89 +1,66 @@
-<h1 align="center">🚀 Travel Delma</h1>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
-  <strong>A Modern Travel & Tour Booking Platform Built with Laravel</strong><br>
-  Manage destinations, tours, bookings and payments in one polished application.
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-<p align="center">
-  <a href="https://github.com/BKOLPO-Technologies/travel-delma/actions"><img src="https://github.com/BKOLPO-Technologies/travel-delma/workflows/tests/badge.svg" alt="Build Status"></a>
-  <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/badge/Laravel-12.x-ff2d20?logo=laravel" alt="Laravel Version"></a>
-  <a href="https://github.com/BKOLPO-Technologies/travel-delma"><img src="https://img.shields.io/github/license/BKOLPO-Technologies/travel-delma?color=green" alt="License"></a>
-  <a href="https://github.com/BKOLPO-Technologies/travel-delma"><img src="https://img.shields.io/github/stars/BKOLPO-Technologies/travel-delma?style=social" alt="GitHub Stars"></a>
-</p>
+## About Laravel
 
----
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-## 📌 About Travel Delma
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Travel Delma is a full-featured travel booking system developed using the Laravel framework. It is ideal for travel agencies, tour operators or entrepreneurs looking to launch an online travel business with robust functionality and clean architecture.  
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-Key goals:  
-- Provide an intuitive booking experience for end-users.  
-- Offer administrative tools for managing tours, hotels, destinations and payments.  
-- Deliver a maintainable, scalable codebase that follows Laravel best practices.
+## Learning Laravel
 
----
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-## 🎯 Features
+You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-- ✅ Destination management (countries, cities, attractions)  
-- ✅ Tour / package creation, categorization, pricing  
-- ✅ Booking workflow: select package → choose dates → payment → confirmation  
-- ✅ Payment gateway integration (e.g., Stripe, AmarPay)  
-- ✅ User authentication, profile & booking history  
-- ✅ Admin dashboard: analytics, bookings overview, revenue reports  
-- ✅ Multi-language & multi-currency support  
-- ✅ Responsive UI: works seamlessly on mobile, tablet & desktop  
-- ✅ API endpoints for future mobile apps or integrations  
-- ✅ Clean codebase with service-repository pattern, unit tests prepared
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
----
+## Laravel Sponsors
 
-## 🧪 Tech Stack & Tools
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-- **Backend:** Laravel (PHP)  
-- **Frontend:** Blade templates (with potential to extend to Vue/React)  
-- **Database:** MySQL / MariaDB  
-- **Authentication:** Laravel Breeze or Sanctum for API  
-- **Payments:** Integrations with card/online payments (e.g., AmarPay, Stripe)  
-- **Job Queue:** Laravel Queues for async tasks such as email notifications  
-- **PDF Invoices:** barryvdh/laravel-dompdf (if applicable)  
-- **Server Requirements:**  
-  - PHP ≥ 8.2  
-  - Composer  
-  - Node.js & npm/yarn for frontend assets  
-  - A modern relational database (MySQL/MariaDB)  
+### Premium Partners
 
----
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[OP.GG](https://op.gg)**
+- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+- **[Lendio](https://lendio.com)**
 
-## 🔧 Installation & Setup
+## Contributing
 
-Follow these steps to get the project running locally:
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-```bash
-# 1. Clone the repository
-git clone https://github.com/BKOLPO-Technologies/travel-delma.git
+## Code of Conduct
 
-# 2. Change into project directory
-cd travel-delma
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-# 3. Install backend dependencies
-composer install
+## Security Vulnerabilities
 
-# 4. Install frontend dependencies
-npm install && npm run dev
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-# 5. Copy and configure environment variables
-cp .env.example .env
-php artisan key:generate
+## License
 
-# 6. Configure .env with database credentials, mail, payment keys etc.
-
-# 7. Migrate and optionally seed data
-php artisan migrate --seed
-
-# 8. Start development server
-php artisan serve
-
-# Visit http://127.0.0.1:8000 in your browser
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
