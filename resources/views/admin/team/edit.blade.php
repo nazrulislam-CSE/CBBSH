@@ -67,6 +67,17 @@
                         </div>
                     </div>
 
+                    
+                    <div class="form-group col-xl-6 col-lg-6 col-md-6">
+                       <label for="phone">Phone: <span class="text-danger"></span></label>
+                       @error('phone') <span class="text-danger">{{ $message }}</span> @enderror
+                        <div class="input-group">
+                            <span class="input-group-text" title="Phone" id="basic-addon1"><i class="fas fa-users"></i></span>
+                            <input type="text" value="{{ $team->phone }}" class=" form-control" name="phone" placeholder="Enter Phone">
+                        </div>
+                    </div>
+
+
                     <div class="form-group col-xl-6 col-lg-6 col-md-6">
                         <label for="designation">Designation: <span class="text-danger"></span></label>
                         @error('designation') <span class="text-danger">{{ $message }}</span> @enderror
@@ -76,7 +87,16 @@
                          </div>
                      </div>
 
-                    <div class="form-group col-xl-6 col-lg-6 col-md-6">
+                        <div class="form-group col-xl-6 col-lg-6 col-md-6">
+                        <label for="address">Address: <span class="text-danger"></span></label>
+                        @error('address') <span class="text-danger">{{ $message }}</span> @enderror
+                         <div class="input-group">
+                             <span class="input-group-text" title="Address" id="basic-addon1"><i class="fas fa-building"></i></span>
+                             <input type="text" value="{{ $team->address }}" class=" form-control" name="address" placeholder="Enter Address">
+                         </div>
+                     </div>
+
+                    {{-- <div class="form-group col-xl-6 col-lg-6 col-md-6">
                         <label for="facebook_url">Facebook Url: <span class="text-danger"></span></label>
                         @error('facebook_url') <span class="text-danger">{{ $message }}</span> @enderror
                         <div class="input-group">
@@ -110,10 +130,10 @@
                             <span class="input-group-text" title="Whatsapp Url" id="basic-addon1"><i class="fab fa-whatsapp"></i></span>
                             <input type="text" value="{{ $team->whatsapp_url }}" class=" form-control" name="whatsapp_url" placeholder="Enter Whatsapp Url">
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="form-group col-xl-6 col-lg-6 col-md-6">
-                        <label for="image">Photo <span class="text-danger font-weight-bolder">(Size:551,551px)</span>:</label>
+                        <label for="image">Photo <span class="text-danger font-weight-bolder">(Size:100,100px)</span>:</label>
                         @error('image') <span class="text-danger">{{ $message }}</span> @enderror
                         <div class="input-group">
                             <span class="input-group-text" title="Photo" id="basic-addon1"><i class="fas fa-photo-video"></i></span>

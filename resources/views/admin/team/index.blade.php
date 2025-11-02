@@ -64,8 +64,10 @@
                                             <th class="border-bottom-0">SL</th>
                                             <th class="border-bottom-0">Photo</th>
                                             <th class="border-bottom-0">Name</th>
+                                            <th class="border-bottom-0">Phone</th>
                                             <th class="border-bottom-0">Designation</th>
-                                            <th class="border-bottom-0">Facebook Url</th>
+                                            <th class="border-bottom-0">Address</th>
+                                            {{-- <th class="border-bottom-0">Facebook Url</th> --}}
                                             <th class="border-bottom-0">Status</th>
                                             <th class="border-bottom-0">Actions</th>
                                         </tr>
@@ -75,11 +77,13 @@
                                         <tr>
                                             <td class="col-1">{{ $key+1 }}</td>
                                             <td>
-                                                <img src="{{ (!empty($team->image)) ? url('upload/team/'.$team->image):url('upload/no_image.jpg') }}" width="50" alt="image" class="img-fluid">
+                                                <img src="{{ (!empty($team->image)) ? url('upload/team/'.$team->image):url('upload/avatar5.png') }}" width="50" alt="image" class="img-fluid">
                                             </td>
-                                            <td>{{ $team->name ?? 'Null'}}</td>
-                                            <td>{{ $team->designation ?? 'Null'}}</td>
-                                            <td>{{ $team->facebook_url ?? 'Null'}}</td>
+                                            <td>{{ $team->name ?? ''}}</td>
+                                            <td>{{ $team->phone ?? ''}}</td>
+                                            <td>{{ $team->designation ?? ''}}</td>
+                                            <td>{{ $team->address ?? ''}}</td>
+                                            {{-- <td>{{ $team->facebook_url ?? 'Null'}}</td> --}}
                                             <td>
                                                 @if($team->status == 1)
                                                     <a href="#" class="badge bg-pill bg-success">Active</a>

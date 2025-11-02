@@ -61,11 +61,19 @@
                 <td>Name</td>
                 <td>{{ $team->name ?? 'NULL' }}</td>
              </tr>
+              <tr>
+                <td>Phone</td>
+                <td>{{ $team->phone ?? 'NULL' }}</td>
+             </tr>
              <tr>
                 <td>Designation</td>
                 <td>{{ $team->designation ?? 'NULL' }}</td>
              </tr>
              <tr>
+                <td>Address</td>
+                <td>{{ $team->address ?? 'NULL' }}</td>
+             </tr>
+            {{-- <tr>
                 <td>Facebook Url</td>
                 <td>{{ $team->facebook_url ?? 'NULL' }}</td>
              </tr>
@@ -80,7 +88,7 @@
              <tr>
                 <td>Whatsapp Url</td>
                 <td>{{ $team->whatsapp_url ?? 'NULL' }}</td>
-             </tr>
+             </tr> --}}
              <tr>
                 <td>Description</td>
                 <td>{!! $team->description ?? 'NULL' !!}</td>

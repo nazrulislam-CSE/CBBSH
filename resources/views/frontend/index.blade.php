@@ -37,7 +37,8 @@
             <div class="row">
                 @if ($about)
                     <div class="col-md-6">
-                        <img src="{{ (!empty($about->image)) ? url('upload/about/'.$about->image):url('upload/no_image.jpg') }}" height="500px;" alt="Mission Vision" />
+                        <img src="{{ !empty($about->image) ? url('upload/about/' . $about->image) : url('upload/no_image.jpg') }}"
+                            height="500px;" alt="Mission Vision" />
 
                         @if ($about->vission)
                             <div class="icon-box fade-in delay-1">
@@ -348,114 +349,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><img src="{{ asset('frontend/img/team/avatar5.png') }}" width="80" class="rounded"
-                                    alt="Sheikh Allama Muhammad Abdul Hai Nadwi"></td>
-                            <td>Sheikh Allama Muhammad Abdul Hai Nadwi (M.Z.A.)</td>
-                            <td>President</td>
-                            <td>Baitush Sharaf Complex, Dhanialapara, Chittagong.<br>Phone: 031-721099</td>
-                        </tr>
-
-                        <tr>
-                            <td><img src="{{ asset('frontend/img/team/avatar5.png') }}" width="80" class="rounded"
-                                    alt="Alhaz Rafiqul Huda Chowdhury"></td>
-                            <td>Alhaz Rafiqul Huda Chowdhury</td>
-                            <td>Vice President</td>
-                            <td>Badar Mokam, Cox's Bazar.<br>Mobile: 01711-160525</td>
-                        </tr>
-
-                        <tr>
-                            <td><img src="{{ asset('frontend/img/team/1.jpg') }}" width="80" class="rounded"
-                                    alt="Alhaz M. M. Sirajul Islam"></td>
-                            <td>Alhaz M. M. Sirajul Islam</td>
-                            <td>General Secretary</td>
-                            <td>An Nahar Mansion, Main Road, Cox's Bazar.<br>Mobile: 01816-026696</td>
-                        </tr>
-
-                        <tr>
-                            <td><img src="{{ asset('frontend/img/team/avatar5.png') }}" width="80" class="rounded"
-                                    alt="Mr. S. M. Kamal Uddin"></td>
-                            <td>Mr. S. M. Kamal Uddin</td>
-                            <td>Joint Secretary</td>
-                            <td>Tekpara, Main Road, Cox's Bazar.<br>Mobile: 01819-976162</td>
-                        </tr>
-
-                        <tr>
-                            <td><img src="{{ asset('frontend/img/team/avatar5.png') }}" width="80" class="rounded"
-                                    alt="Dr. Bashir Ahamad"></td>
-                            <td>Dr. Bashir Ahamad</td>
-                            <td>Treasurer</td>
-                            <td>Tekpara, Main Road, Cox's Bazar.<br>Mobile: 01715-542245</td>
-                        </tr>
-
-                        <tr>
-                            <td><img src="{{ asset('frontend/img/team/avatar5.png') }}" width="80" class="rounded"
-                                    alt="Alhaz Mahfuzul Islam"></td>
-                            <td>Alhaz Mahfuzul Islam</td>
-                            <td>Executive Member</td>
-                            <td>Boro Bazar Road, Bazar Ghata, Cox's Bazar.<br>Mobile: 01711-182094</td>
-                        </tr>
-
-                        <tr>
-                            <td><img src="{{ asset('frontend/img/team/avatar5.png') }}" width="80" class="rounded"
-                                    alt="Dr. Md. Nurul Alam"></td>
-                            <td>Dr. Md. Nurul Alam</td>
-                            <td>General Secretary</td>
-                            <td>Main Road, Bazar Ghata, Cox's Bazar.<br>Mobile: 01711-130684</td>
-                        </tr>
-
-                        <tr>
-                            <td><img src="{{ asset('frontend/img/team/avatar5.png') }}" width="80" class="rounded"
-                                    alt="Mr. Farid Ahamed"></td>
-                            <td>Mr. Farid Ahamed</td>
-                            <td>Joint Secretary</td>
-                            <td>Faisal Mansion, Buddist Temple Road, Cox's Bazar.<br>Mobile: 01718-373364</td>
-                        </tr>
-
-                        <tr>
-                            <td><img src="{{ asset('frontend/img/team/avatar5.png') }}" width="80" class="rounded"
-                                    alt="Mr. Aungkya Chin (Meshang)"></td>
-                            <td>Mr. Aungkya Chin (Meshang)</td>
-                            <td>Treasurer</td>
-                            <td>Burmeese School Road, Cox's Bazar.<br>Mobile: 01675-629927</td>
-                        </tr>
-
-                        <tr>
-                            <td><img src="{{ asset('frontend/img/team/avatar5.png') }}" width="80" class="rounded"
-                                    alt="Alhaz Rashedul Alam Khorshed"></td>
-                            <td>Alhaz Rashedul Alam Khorshed</td>
-                            <td>General Secretary</td>
-                            <td>Baitush Sharaf Complex, Dhanialapara, Chittagong.<br>Phone: 031-721099</td>
-                        </tr>
-
-                        <tr>
-                            <td><img src="{{ asset('frontend/img/team/avatar5.png') }}" width="80" class="rounded"
-                                    alt="Alhaz Nurul Islam"></td>
-                            <td>Alhaz Nurul Islam</td>
-                            <td>Executive Member</td>
-                            <td>Baitush Sharaf Complex, Dhanialapara, Chittagong.<br>Phone: 031-721099</td>
-                        </tr>
-
-                        <tr>
-                            <td><img src="{{ asset('frontend/img/team/avatar5.png') }}" width="80" class="rounded"
-                                    alt="Mowlana Nazrul Islam"></td>
-                            <td>Mowlana Nazrul Islam</td>
-                            <td>Executive Member</td>
-                            <td>Burmeese School Road, Tekpara, Cox's Bazar.<br>Mobile: 01815-508325</td>
-                        </tr>
-
-                        <tr>
-                            <td><img src="{{ asset('frontend/img/team/avatar5.png') }}" width="80" class="rounded"
-                                    alt="Mr. Mujibul Islam"></td>
-                            <td>Mr. Mujibul Islam</td>
-                            <td>Executive Member</td>
-                            <td>Tekpara, Cox's Bazar.<br>Mobile: 01816-362741</td>
-                        </tr>
+                        @foreach ($teams as $team)
+                            <tr>
+                                <td>
+                                    <img src="{{ !empty($team->image) ? url('upload/team/' . $team->image) : url('upload/avatar5.png') }}"
+                                        width="80" class="rounded" alt="{{ $team->name }}">
+                                </td>
+                                <td>{{ $team->name }}</td>
+                                <td>{{ $team->designation }}</td>
+                                <td>
+                                    {!! nl2br(e($team->address)) !!}
+                                    @if (!empty($team->phone))
+                                        <br>{{ $team->phone }}
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
     </section>
+
 
     <!-- Map Section -->
     <section class="map-section">

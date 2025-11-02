@@ -37,7 +37,7 @@ class TeamController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'designation' => 'required',
-            'image' => 'required|image|mimes:jpg,jpeg,png,gif,svg|max:2048',
+            // 'image' => 'required|image|mimes:jpg,jpeg,png,gif,svg|max:2048',
             // 'description' => 'required',
         ]);
 
@@ -45,6 +45,8 @@ class TeamController extends Controller
         $team = new Team;
 
         $team->name            = $request->name;
+        $team->phone           = $request->phone;
+        $team->address         = $request->address;
         $team->designation     = $request->designation;
         $team->description     = $request->description;
         $team->facebook_url    = $request->facebook_url;
@@ -105,6 +107,8 @@ class TeamController extends Controller
         $team = Team::find($id);
 
         $team->name            = $request->name;
+        $team->phone           = $request->phone;
+        $team->address         = $request->address;
         $team->designation     = $request->designation;
         $team->description     = $request->description;
         $team->facebook_url    = $request->facebook_url;
