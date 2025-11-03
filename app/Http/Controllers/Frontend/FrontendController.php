@@ -27,11 +27,12 @@ class FrontendController extends Controller
         $counters = Counter::where('status',1)->latest()->get();
         $services = Service::where('status',1)->latest()->get();
         $gallerys  = Gallery::where('status',1)->latest()->get();
+        $partners  = Partner::where('status',1)->latest()->get();
 
         $pageTitle = 'Best Hospital in Bangladesh';
 
 
-        return view('frontend.index',compact('sliders','about','teams','counters','services','gallerys','pageTitle'));
+        return view('frontend.index',compact('sliders','about','teams','counters','services','gallerys','pageTitle','partners'));
     }
 
     /* =========== SINGLE STUDY ABROAD SHOW ===========*/

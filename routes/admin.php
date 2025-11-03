@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\DestinationController;
+use App\Http\Controllers\Admin\PartnerController;
 
 
 Route::get('/login', [AdminLoginController::class, 'viewLogin'])->name('login.view');
@@ -179,6 +180,18 @@ Route::middleware('admin')->group(function () {
         Route::post('/update/{id}', [GalleryController::class, 'update'])->name('gallery.update');
         Route::get('/delete/{id}', [GalleryController::class, 'destroy'])->name('gallery.delete');
         Route::get('/show/{id}', [GalleryController::class,'show'])->name('gallery.show');
+
+    });
+    
+     /* ============> Manage Partner   <=========== */
+    Route::prefix('partner')->group(function () {
+        Route::get('/index', [PartnerController::class, 'index'])->name('partner.index');
+        Route::get('/create', [PartnerController::class, 'create'])->name('partner.create');
+        Route::post('/store', [PartnerController::class, 'store'])->name('partner.store');
+        Route::get('/edit/{id}', [PartnerController::class, 'edit'])->name('partner.edit');
+        Route::post('/update/{id}', [PartnerController::class, 'update'])->name('partner.update');
+        Route::get('/delete/{id}', [PartnerController::class, 'destroy'])->name('partner.delete');
+        Route::get('/show/{id}', [PartnerController::class,'show'])->name('partner.show');
 
     });
 

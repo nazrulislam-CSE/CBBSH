@@ -129,6 +129,19 @@
                     </ul>
                 </li>
 
+                <li class="slide {{ Request::is('admin/partner*') ? 'is-expanded' : '' }}">
+                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0);">
+                        <i class="side-menu__icon fas fa-users"></i>
+                        <span class="side-menu__label">Partners</span>
+                        <i class="angle fe fe-chevron-down hor-angle"></i>
+                    </a>
+                    <ul class="slide-menu">
+                        <li class="side-menu__label1"><a href="javascript:void(0);">Partners</a></li>
+                        <li><a class="slide-item {{ Request::is('admin/partner/create') ? 'active' : '' }}" href="{{ route('admin.partner.create') }}">Partner Add</a></li>
+                        <li><a class="slide-item {{ Request::is('admin/partner/list') ? 'active' : '' }}" href="{{ route('admin.partner.index') }}">Partner List</a></li>
+                    </ul>
+                </li>
+
                 <li class="slide {{ Request::is('admin/testimonials*') ? 'is-expanded' : '' }}">
                     <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0);">
                         <i class="side-menu__icon fas fa-users"></i>

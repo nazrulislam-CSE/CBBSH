@@ -218,29 +218,16 @@
         <div class="container">
             <h2 class="section-title fade-in">Our Partners & Supporters</h2>
             <div class="row justify-content-center">
-                <div class="col-md-2 col-4 text-center fade-in">
-                    <img src="https://www.decfbd.org/wp-content/uploads/elementor/thumbs/Dak-foundation-1-ppgyviu1qf8c4ovcaogcmuer0kkgenv238a57tvenc.png"
-                        alt="DAK Foundation" class="partner-logo" />
-                </div>
-                <div class="col-md-2 col-4 text-center fade-in delay-1">
-                    <img src="https://www.decfbd.org/wp-content/uploads/elementor/thumbs/Orbis-ppgulbf8iw4vfov2r0tqkraemwmnm9oc7zcgvmijfs.png"
-                        alt="Orbis" class="partner-logo" />
-                </div>
-                <div class="col-md-2 col-4 text-center fade-in delay-2">
-                    <img src="https://www.decfbd.org/wp-content/uploads/elementor/thumbs/Laico-ppgul9jk582asgxt200hfrrhg4vx6vgvjq1hx2lbs8.png"
-                        alt="Laico" class="partner-logo" />
-                </div>
-                <div class="col-md-2 col-4 text-center fade-in delay-3">
-                    <img src="https://www.decfbd.org/wp-content/uploads/elementor/thumbs/IR-ppgul8lpye10guz67hluva00ur0jz6d57le0fsmpyg.png"
-                        alt="IR" class="partner-logo" />
-                </div>
-                <div class="col-md-2 col-4 text-center fade-in delay-1">
-                    <img src="https://www.decfbd.org/wp-content/uploads/elementor/thumbs/Rotary-ppgulcd2pq65ratplj8d591v8ai0tys2k3zycwh59k.png"
-                        alt="Rotary" class="partner-logo" />
-                </div>
+                @foreach ($partners as $key => $partner)
+                    <div class="col-md-2 col-4 text-center fade-in delay-{{ $key }}">
+                        <img src="{{ !empty($partner->image) ? url('upload/partner/' . $partner->image) : url('upload/no_image.jpg') }}"
+                            alt="{{ $partner->name ?? 'Partner Logo' }}" class="partner-logo img-fluid">
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
+
 
     <!-- News & Events Section -->
     <section class="news-events">
