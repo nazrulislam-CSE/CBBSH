@@ -14,6 +14,7 @@ use App\Models\Subscribe;
 use App\Models\Service;
 use App\Models\Gallery;
 use App\Models\Counter;
+use App\Models\NewsEvent;
 use Illuminate\Support\Carbon;
 
 class FrontendController extends Controller
@@ -28,11 +29,11 @@ class FrontendController extends Controller
         $services = Service::where('status',1)->latest()->get();
         $gallerys  = Gallery::where('status',1)->latest()->get();
         $partners  = Partner::where('status',1)->latest()->get();
-
+        $newsEvents = NewsEvent::orderBy('date', 'desc')->where('status',1)->get();
         $pageTitle = 'Best Hospital in Bangladesh';
 
 
-        return view('frontend.index',compact('sliders','about','teams','counters','services','gallerys','pageTitle','partners'));
+        return view('frontend.index',compact('sliders','about','teams','counters','services','gallerys','pageTitle','partners','newsEvents'));
     }
 
     /* =========== SINGLE STUDY ABROAD SHOW ===========*/

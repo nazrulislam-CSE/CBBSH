@@ -20,6 +20,8 @@ use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\DestinationController;
 use App\Http\Controllers\Admin\PartnerController;
+use App\Http\Controllers\Admin\NewsEventController;
+
 
 
 Route::get('/login', [AdminLoginController::class, 'viewLogin'])->name('login.view');
@@ -183,7 +185,7 @@ Route::middleware('admin')->group(function () {
 
     });
     
-     /* ============> Manage Partner   <=========== */
+    /* ============> Manage Partner   <=========== */
     Route::prefix('partner')->group(function () {
         Route::get('/index', [PartnerController::class, 'index'])->name('partner.index');
         Route::get('/create', [PartnerController::class, 'create'])->name('partner.create');
@@ -194,6 +196,9 @@ Route::middleware('admin')->group(function () {
         Route::get('/show/{id}', [PartnerController::class,'show'])->name('partner.show');
 
     });
+
+    /* ============> Manage News & Event   <=========== */
+    Route::resource('news-events', NewsEventController::class);
 
     
 

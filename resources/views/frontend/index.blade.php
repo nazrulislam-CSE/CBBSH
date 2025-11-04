@@ -1,5 +1,14 @@
 @extends('layouts.frontend.app')
 @section('content')
+<style>
+    .partner-logo {
+        height: 80px;
+        filter: grayscale(0%);
+        transition: var(--transition);
+        margin: 15px;
+        opacity: 0.7;
+    }
+</style>
     <!-- Rest of the content remains the same -->
     <!-- Hero Slider -->
 
@@ -233,48 +242,38 @@
     <section class="news-events">
         <div class="container">
             <div class="row">
+                {{-- News & Events --}}
                 <div class="col-md-6 fade-in">
                     <h4 class="mb-4">News & Events</h4>
                     <div class="news-slider-container">
                         <div class="news-slider">
-                            <div class="news-slide active">
-                                <div class="news-content">
-                                    <h5>Primary Eye Care Training</h5>
-                                    <p>
-                                        Organized by: Deep Eye Care Foundation<br />
-                                        Date: 28 May, 2025<br />
-                                        Venue: Deep Eye Care Foundation EPZ Vision Centre.
-                                    </p>
-                                    <a href="#" class="btn btn-light mt-3">Read More</a>
+                            @foreach ($newsEvents as $index => $event)
+                                <div class="news-slide {{ $loop->first ? 'active' : '' }}">
+                                    <div class="news-content">
+                                        <h5>{{ $event->title }}</h5>
+                                        <p>
+                                            @if ($event->organizer)
+                                                Organized by: {{ $event->organizer }}<br>
+                                            @endif
+                                            @if ($event->date)
+                                                Date: {{ \Carbon\Carbon::parse($event->date)->format('d F, Y') }}<br>
+                                            @endif
+                                            @if ($event->venue)
+                                                Venue: {{ $event->venue }}
+                                            @endif
+                                        </p>
+                                        @if ($event->link)
+                                            <a href="{{ $event->link }}" class="btn btn-light mt-3">Read More</a>
+                                        @endif
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="news-slide">
-                                <div class="news-content">
-                                    <h5>Annual Eye Care Conference</h5>
-                                    <p>
-                                        Organized by: Deep Eye Care Foundation<br />
-                                        Date: 15 June, 2025<br />
-                                        Venue: DECF Main Campus, Rangpur.
-                                    </p>
-                                    <a href="#" class="btn btn-light mt-3">Read More</a>
-                                </div>
-                            </div>
-                            <div class="news-slide">
-                                <div class="news-content">
-                                    <h5>Free Eye Camp in Rural Area</h5>
-                                    <p>
-                                        Organized by: Deep Eye Care Foundation<br />
-                                        Date: 10 July, 2025<br />
-                                        Venue: Kurigram District.
-                                    </p>
-                                    <a href="#" class="btn btn-light mt-3">Read More</a>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                         <div class="news-indicators">
-                            <div class="news-indicator active" data-slide="0"></div>
-                            <div class="news-indicator" data-slide="1"></div>
-                            <div class="news-indicator" data-slide="2"></div>
+                            @foreach ($newsEvents as $i => $event)
+                                <div class="news-indicator {{ $loop->first ? 'active' : '' }}"
+                                    data-slide="{{ $i }}"></div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
