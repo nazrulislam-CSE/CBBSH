@@ -169,55 +169,16 @@
         <div class="container">
             <h2 class="section-title fade-in">Inspiring Stories of Recovery</h2>
             <div class="row">
-                <div class="col-md-6 fade-in">
+                @foreach($stories as $index => $story)
+                <div class="col-md-6 fade-in delay-{{ $index % 4 }}">
                     <div class="story-card">
-                        <img src="https://www.decfbd.org/wp-content/uploads/2020/12/c-2-150x150.jpg" alt="Story 1" />
+                        <img src="{{ (!empty($story->image)) ? url('upload/story/'.$story->image):url('upload/no_image.jpg') }}" alt="{{ $story->title }}" />
                         <div>
-                            <h6>RESCUING A LIFE LIKELY TO BE NIPPED IN THE BUD</h6>
+                            <h6>{{ $story->title }}</h6>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 fade-in delay-1">
-                    <div class="story-card">
-                        <img src="https://www.decfbd.org/wp-content/uploads/2020/12/B1-150x150.jpg" alt="Story 2" />
-                        <div>
-                            <h6>RESTORATION OF A LOST HOPE</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 fade-in delay-2">
-                    <div class="story-card">
-                        <img src="https://www.decfbd.org/wp-content/uploads/2020/12/03-3-150x150.jpg" alt="Story 3" />
-                        <div>
-                            <h6>STORY OF RECOVERY LIKE A DREAM</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 fade-in delay-3">
-                    <div class="story-card">
-                        <img src="https://www.decfbd.org/wp-content/uploads/2021/02/SAM_3691-150x150.jpg"
-                            alt="Story 4" />
-                        <div>
-                            <h6>SCHOOL-AGED CHILDREN SCREENING PROGRAM (SACSP)</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 fade-in delay-1">
-                    <div class="story-card">
-                        <img src="https://www.decfbd.org/wp-content/uploads/2020/12/D-1-150x150.jpg" alt="Story 5" />
-                        <div>
-                            <h6>A STAGNANT POOL TURNING A STREAMING FOUNTAIN</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 fade-in delay-2">
-                    <div class="story-card">
-                        <img src="https://www.decfbd.org/wp-content/uploads/2021/07/rr-150x150.jpg" alt="Story 6" />
-                        <div>
-                            <h6>SUCCESSFUL STORY OF SURUVI</h6>
-                        </div>
-                    </div>
-                </div>
+            @endforeach
             </div>
         </div>
     </section>

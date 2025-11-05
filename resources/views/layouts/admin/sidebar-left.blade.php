@@ -187,6 +187,30 @@
                     </ul>
                 </li>
 
+                <li class="slide {{ Request::is('admin/story*') ? 'is-expanded' : '' }}">
+                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0);">
+                        <i class="side-menu__icon fas fa-newspaper"></i>
+                        <span class="side-menu__label">Inspiring Stories</span>
+                        <i class="angle fe fe-chevron-down hor-angle"></i>
+                    </a>
+
+                    <ul class="slide-menu">
+                        <li class="side-menu__label1"><a href="javascript:void(0);">Inspiring Stories</a></li>
+                        <li>
+                            <a class="slide-item {{ Request::is('admin/story/create') ? 'active' : '' }}"
+                                href="{{ route('admin.story.create') }}">
+                                Add Inspiring Stories
+                            </a>
+                        </li>
+                        <li>
+                            <a class="slide-item {{ Request::is('admin/story') ? 'active' : '' }}"
+                                href="{{ route('admin.story.index') }}">
+                                Inspiring Stories List
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
 
                 <li class="slide {{ Request::is('admin/testimonials*') ? 'is-expanded' : '' }}">
                     <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0);">
