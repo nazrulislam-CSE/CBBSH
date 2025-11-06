@@ -1,14 +1,14 @@
 @extends('layouts.frontend.app')
 @section('content')
-<style>
-    .partner-logo {
-        height: 80px;
-        filter: grayscale(0%);
-        transition: var(--transition);
-        margin: 15px;
-        opacity: 0.7;
-    }
-</style>
+    <style>
+        .partner-logo {
+            height: 80px;
+            filter: grayscale(0%);
+            transition: var(--transition);
+            margin: 15px;
+            opacity: 0.7;
+        }
+    </style>
     <!-- Rest of the content remains the same -->
     <!-- Hero Slider -->
 
@@ -169,16 +169,17 @@
         <div class="container">
             <h2 class="section-title fade-in">Inspiring Stories of Recovery</h2>
             <div class="row">
-                @foreach($stories as $index => $story)
-                <div class="col-md-6 fade-in delay-{{ $index % 4 }}">
-                    <div class="story-card">
-                        <img src="{{ (!empty($story->image)) ? url('upload/story/'.$story->image):url('upload/no_image.jpg') }}" alt="{{ $story->title }}" />
-                        <div>
-                            <h6>{{ $story->title }}</h6>
+                @foreach ($stories as $index => $story)
+                    <div class="col-md-6 fade-in delay-{{ $index % 4 }}">
+                        <div class="story-card">
+                            <img src="{{ !empty($story->image) ? url('upload/story/' . $story->image) : url('upload/no_image.jpg') }}"
+                                alt="{{ $story->title }}" />
+                            <div>
+                                <h6>{{ $story->title }}</h6>
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
             </div>
         </div>
     </section>
@@ -240,42 +241,28 @@
                 </div>
                 <div class="col-md-6 fade-in delay-1">
                     <h4 class="mb-4">Notice</h4>
-                    <div class="notice-item">
-                        <div class="row">
-                            <div class="col-4">
-                                <h5>16 August 2025</h5>
-                            </div>
-                            <div class="col-8">
-                                <p>
-                                    <strong>MLOP Certificate Course Circular (July) 2025</strong>
-                                </p>
-                                <a href="#" class="btn btn-primary btn-sm">Click here</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="notice-item">
-                        <div class="row">
-                            <div class="col-4">
-                                <h5>05 June 2025</h5>
-                            </div>
-                            <div class="col-8">
-                                <p><strong>Eid-Ul-Adha Notice 2025</strong></p>
-                                <a href="#" class="btn btn-primary btn-sm">Click here</a>
+                    @forelse ($notices as $notice)
+                        <div class="notice-item">
+                            <div class="row">
+                                <div class="col-4">
+                                    <h5>{{ \Carbon\Carbon::parse($notice->date)->format('d F Y') }}</h5>
+                                </div>
+                                <div class="col-8">
+                                    <p><strong>{{ $notice->title }}</strong></p>
+                                    @if ($notice->file_url)
+                                        <a href="{{ asset('storage/' . $notice->file_url) }}" target="_blank"
+                                            class="btn btn-primary btn-sm">
+                                            Click here
+                                        </a>
+                                    @endif
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="notice-item">
-                        <div class="row">
-                            <div class="col-4">
-                                <h5>29 March 2025</h5>
-                            </div>
-                            <div class="col-8">
-                                <p><strong>Eid Notice 2025</strong></p>
-                                <a href="#" class="btn btn-primary btn-sm">Click here</a>
-                            </div>
-                        </div>
-                    </div>
+                    @empty
+                        <p>No notices available.</p>
+                    @endforelse
                 </div>
+
             </div>
         </div>
     </section>

@@ -22,6 +22,7 @@ use App\Http\Controllers\Admin\DestinationController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\NewsEventController;
 use App\Http\Controllers\Admin\StoryController;
+use App\Http\Controllers\Admin\NoticeController;
 
 
 
@@ -203,6 +204,11 @@ Route::middleware('admin')->group(function () {
 
     /* ============> Manage Inspiring Stories   <=========== */
     Route::resource('story', StoryController::class);
+
+    /* ============> Manage Notice   <=========== */
+    Route::resource('notice', NoticeController::class);
+
+    
 
     
 

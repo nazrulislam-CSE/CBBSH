@@ -212,6 +212,38 @@
                 </li>
 
 
+                <li class="slide {{ Request::is('admin/notice*') ? 'is-expanded' : '' }}">
+                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0);">
+                        <i class="side-menu__icon fas fa-bell"></i>
+                        <span class="side-menu__label">Notice</span>
+                        <i class="angle fe fe-chevron-down hor-angle"></i>
+                    </a>
+
+                    <ul class="slide-menu">
+                        <li class="side-menu__label1"><a href="javascript:void(0);">Notice</a></li>
+
+                        {{-- Add Notice --}}
+                        <li>
+                            <a class="slide-item {{ Request::is('admin/notice/create') ? 'active' : '' }}"
+                                href="{{ route('admin.notice.create') }}">
+                                <i class="fas fa-plus-circle"></i> Add Notice
+                            </a>
+                        </li>
+
+                        {{-- Notice List --}}
+                        <li>
+                            <a class="slide-item {{ Request::is('admin/notice') ? 'active' : '' }}"
+                                href="{{ route('admin.notice.index') }}">
+                                <i class="fas fa-list"></i> Notice List
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
+
                 <li class="slide {{ Request::is('admin/testimonials*') ? 'is-expanded' : '' }}">
                     <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0);">
                         <i class="side-menu__icon fas fa-users"></i>

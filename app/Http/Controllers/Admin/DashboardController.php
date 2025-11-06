@@ -16,7 +16,8 @@ use App\Models\About;
 use App\Models\User;  
 use App\Models\Admin;  
 use Auth;
- 
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class DashboardController extends Controller
 {
@@ -32,6 +33,13 @@ class DashboardController extends Controller
         $menus        = Menu::latest()->get();   
         $sliders      = Slider::latest()->get();   
         $abouts       = About::latest()->get();   
+
+        // Check if the public/storage symlink exists
+        if (!File::exists(public_path('storage'))) {
+            // Create the symlink
+            app('files')->link(storage_path('app/public'), public_path('storage'));
+        }
+
         return view('admin.dashboard.index', compact('pageTitle', 'sections', 'pages','menuitems','menus','testimonials','teams','sections','settings','sliders','abouts'));
     }
 }
