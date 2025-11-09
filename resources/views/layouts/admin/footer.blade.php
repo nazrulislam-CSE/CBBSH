@@ -6,7 +6,7 @@
             All Rights Reserved.
         </span>
         <span class="text-muted">
-            Developed by <a href="https://bkolpo.com/" class="text-primary" target="_blank">{{ get_setting('developed_by')->value ?? '' }}</a>
+            Developed by <a href="#" class="text-primary" target="_blank">{{ get_setting('developed_by')->value ?? '' }}</a>
         </span>
     </div>
 </div>

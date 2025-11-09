@@ -123,11 +123,11 @@ class PageController extends Controller
         $page->save();
 
         $menuitem_page = Menuitem::where('page_id', $page->id)->first();
+        
 
         if ($menuitem_page !== null) {
-            $menuitem_page->title_en = $page->title_en;
-            $menuitem_page->title_bn = $page->title_bn;
-            $menuitem_page->url = strtolower(trim(preg_replace('/\s+/', '-', $page->title_en)));
+            $menuitem_page->title = $page->page_title;
+            $menuitem_page->url = strtolower(trim(preg_replace('/\s+/', '-', $page->page_title)));
             $menuitem_page->status = $page->status;
             $menuitem_page->save();
         }
