@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Story;
+use Carbon\Carbon;
 
 class StoryController extends Controller
 {
@@ -64,7 +65,7 @@ class StoryController extends Controller
         $story->save();
 
         flash()->addSuccess("Story Created Successfully.");
-        $url = '/admin/story/index';
+        $url = '/admin/story';
         return redirect($url);
     }
 
@@ -116,7 +117,7 @@ class StoryController extends Controller
         $story->save();
 
         flash()->addSuccess("Story Updated Successfully.");
-        $url = '/admin/story/index';
+        $url = '/admin/story';
         return redirect($url);
     }
 
@@ -139,7 +140,7 @@ class StoryController extends Controller
         $story->delete();
 
         flash()->addError("Story Deleted Successfully.");
-        $url = '/admin/story/index';
+        $url = '/admin/story';
         return redirect($url);
     }
 }

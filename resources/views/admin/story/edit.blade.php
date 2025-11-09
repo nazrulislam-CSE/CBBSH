@@ -58,6 +58,7 @@
                     <form action="{{ route('admin.story.update', $story->id) }}" method="post"
                         enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
                         <div class="row">
 
                             <div class="form-group col-xl-12 col-lg-12 col-md-6">

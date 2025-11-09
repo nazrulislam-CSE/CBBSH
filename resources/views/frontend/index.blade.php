@@ -132,37 +132,24 @@
                 33 Years Services In Eye Care
             </h2>
             <div class="row">
-                <div class="col-md-3 col-6 fade-in">
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-eye"></i></div>
-                        <div class="stat-number">778,219</div>
-                        <div class="stat-label">Vision Corrected</div>
+                @php
+                    // Fixed icons (same 4 you had before)
+                    $icons = ['fas fa-eye', 'fas fa-user-injured', 'fas fa-procedures', 'fas fa-low-vision'];
+                @endphp
+
+                @foreach ($counters as $key => $counter)
+                    <div class="col-md-3 col-6 fade-in delay-{{ $key }}">
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="{{ $icons[$key] ?? 'fas fa-eye' }}"></i></div>
+                            <div class="stat-number">{{ $counter->counter_no ?? '0' }}</div>
+                            <div class="stat-label">{{ $counter->label }}</div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 col-6 fade-in delay-1">
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-user-injured"></i></div>
-                        <div class="stat-number">2,067,279</div>
-                        <div class="stat-label">Outpatients Treated</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6 fade-in delay-2">
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-procedures"></i></div>
-                        <div class="stat-number">146,536</div>
-                        <div class="stat-label">Ocular Surgeries</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6 fade-in delay-3">
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-low-vision"></i></div>
-                        <div class="stat-number">113,501</div>
-                        <div class="stat-label">Cataract Surgeries</div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
+
 
     <!-- Inspiring Stories Section -->
     <section class="stories-section">
